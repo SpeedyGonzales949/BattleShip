@@ -7,7 +7,9 @@ const userForm = document.getElementById("user-container");
 const userInput = document.getElementById("user-name");
 const roomForm = document.getElementById("roomForm");
 const UserBtn = document.getElementById("send-user");
-const intro = document.getElementById("welcome");
+const UsersContainer = document.getElementById("online-users");
+const UserTab = document.getElementById("current-users");
+
 let user = "";
 if (userForm != null) {
   userForm.addEventListener("submit", (e1) => {
@@ -128,4 +130,14 @@ function createDivName(name, BigDiv) {
   }
   BigDiv.style = "display:block;";
   return DivName;
+}
+
+function OpenUserTab() {
+  if (UsersContainer.classList.contains("animated")) {
+    UsersContainer.classList.remove("animated");
+    UsersContainer.style = "display:none;";
+  } else {
+    UsersContainer.classList.add("animated");
+    UsersContainer.style = "display:block;";
+  }
 }

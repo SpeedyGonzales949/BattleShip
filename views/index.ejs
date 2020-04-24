@@ -4,93 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Chat App</title>
+    <title>Y-23 Shack</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
     />
     <script defer src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="css/index.css" />
     <script defer src="script.js"></script>
-    <style>
-      body {
-        background: linear-gradient(to top, #08003b, #0d227b);
-        height: 100vh;
-        width: 100%;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .bg {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -100;
-        width: 90vh;
-        height: 90vh;
-        background: url(images/img1.png);
-
-        background-size: cover;
-      }
-      #user-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      #send-user {
-        background: transparent;
-        border: none;
-        cursor: pointer;
-      }
-      #send-user svg {
-        transform: rotate(45deg);
-      }
-      #room-container {
-        display: none;
-        overflow-y: auto;
-        width: 200px;
-        height: 200px;
-        background: aliceblue;
-        padding: 3px;
-        border-radius: 10px;
-      }
-      #room-container::-webkit-scrollbar {
-        width: 0.5em;
-      }
-      #room-container::-webkit-scrollbar-thumb {
-        background: lightblue;
-        border-radius: 10px;
-      }
-      #room-container div {
-        margin-top: 10px;
-        border-bottom: 2px solid blue;
-        display: flex;
-        align-items: center;
-      }
-
-      #room-container div a {
-        margin-left: auto;
-      }
-      #roomForm {
-        display: none;
-      }
-
-      #welcome {
-        color: white;
-        display: none;
-        font-size: 20px;
-      }
-
-      #welcome div span {
-        color: white;
-        margin: 1px;
-        font-size: 40px;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
+    <button id="OpenUserTab" onclick="OpenUserTab()">&#9973;</button>
+    <div class="online-users zoomInDown" id="online-users">
+      <div class="current-users" id="current-users"></div>
+    </div>
     <div id="welcome">Welcome back,</div>
     <form id="user-container" method="GET">
       <input

@@ -10,6 +10,7 @@
       integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="css/room.css" />
     <link rel="stylesheet" href="emoji/emojionearea.min.css" />
     <script src="emoji/emojionearea.min.js"></script>
 
@@ -18,102 +19,6 @@
     </script>
     <script defer src="/socket.io/socket.io.js"></script>
     <script defer src="script.js"></script>
-    <style>
-      body {
-        background: url(./chat-room.jpg);
-        background-position: center;
-        background-size: cover;
-        padding: 0;
-        margin: 10px;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-      }
-      #message-container::-webkit-scrollbar {
-        width: 0.5rem;
-      }
-
-      #message-container::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
-      #message-container::-webkit-scrollbar-thumb {
-        background: linear-gradient(to top, white, black, white);
-        border-radius: 10px;
-      }
-
-      #message-container {
-        margin-top: 20px;
-        width: 80%;
-        height: 70%;
-        overflow-y: auto;
-        overflow-x: hidden;
-        max-width: 1200px;
-        display: flex;
-        flex-direction: column;
-      }
-      #message-container span {
-        color: white;
-        font-style: italic;
-        margin-right: 5px;
-      }
-      #message-container div {
-        border-radius: 10px;
-        width: fit-content;
-        max-width: 300px;
-        height: auto;
-        background-color: rgba(255, 255, 255, 0.5);
-        margin-right: 5px;
-        margin-top: 3px;
-        margin-bottom: 1px;
-      }
-      #message-container div p {
-        padding: 2px;
-        max-width: 270px;
-        width: fit-content;
-        height: fit-content;
-        text-align: justify;
-        margin: 0;
-      }
-
-      #send-container {
-        position: fixed;
-        padding-bottom: 30px;
-        bottom: 0;
-        background-color: transparent;
-        max-width: 1200px;
-        width: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      #send-button {
-        height: fit-content;
-      }
-
-      @media only screen and (max-width: 600px) {
-        #send-container {
-          flex-direction: column;
-        }
-      }
-      @media only screen and (max-height: 640px) {
-        #message-container {
-          margin-top: 0px;
-          height: auto;
-          flex-grow: 1;
-        }
-        #send-container {
-          position: relative;
-        }
-        body {
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-    </style>
   </head>
   <body>
     <div id="message-container"></div>
